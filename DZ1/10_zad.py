@@ -1,6 +1,6 @@
 import math
 
-year= 2022
+year = 2022
 month = 5
 day = 7
 

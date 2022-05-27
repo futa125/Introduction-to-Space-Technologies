@@ -4,6 +4,10 @@ import numpy as np
 b_i = np.array([22.2, 1.7, 42.7])
 n = np.array([-1, 1, -4])
 alpha = np.radians(65)
+print('b_i = {}'.format(b_i))
+print('n = {}'.format(n))
+print('alpha = {} rad'.format(alpha))
+print()
 
 # 1
 n_magnitude = np.linalg.norm(n)
@@ -20,6 +24,10 @@ q1 = np.cos(alpha / 2)
 q2 = n_normalized[0] * np.sin(alpha / 2)
 q3 = n_normalized[1] * np.sin(alpha / 2)
 q4 = n_normalized[2] * np.sin(alpha / 2)
+print('q1 = {}'.format(q1))
+print('q2 = {}'.format(q2))
+print('q3 = {}'.format(q3))
+print('q4 = {}'.format(q4))
 
 q = np.array([q1, q2, q3, q4])
 q_magnitude = np.linalg.norm(q)
@@ -73,6 +81,7 @@ R = np.array([
     [r21, r22, r23],
     [r31, r32, r33]
 ])
+print('R = {}'.format(R))
 b_b = np.dot(R, b_i)
 print('b_b = {}i + {}j + {}k'.format(b_b[0], b_b[1], b_b[2]))
 print()

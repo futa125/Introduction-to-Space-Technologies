@@ -28,10 +28,12 @@ k_vector = np.array([0, 0, 1])
 n_vector = np.cross(k_vector, h_vector)
 n = np.linalg.norm(n_vector)
 print('n: {}'.format(np.degrees(n)))
+print('n_y: {}'.format(n_vector[1]))
 uppercase_omega = np.arccos(n_vector[0] / n) # n_y >= 0
 print('uppercase omega: {}'.format(np.degrees(uppercase_omega)))
 
-lowercase_omega = np.arccos(np.dot(n_vector, e_vector) / (n * e)) # e_z > 0
+print('e_z: {}'.format(e_vector[2]))
+lowercase_omega = np.arccos(np.dot(n_vector, e_vector) / (n * e)) # e_z >= 0
 print('lowercase omega: {}'.format(np.degrees(lowercase_omega)))
 
 i = np.arccos(h_vector[2] / h)
@@ -71,8 +73,10 @@ print('t_after: {}'.format(t_after))
 m_after = 2 * np.pi * (t_after / t)
 print('m_after: {}'.format(m_after))
 
+
 def e_after_func(x):
     return x[0] - e * np.sin(x[0]) - m_after
+
 
 e_after = fsolve(e_after_func, np.array([1]))[0]
 print('e_after: {}'.format(e_after))
