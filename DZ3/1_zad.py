@@ -28,7 +28,7 @@ frequency = 1176.45 * 10**6  # Hz
 # CDF -> Kumulativna funkcija distribucija -> P(X <= x), za x iz skupa realnih brojeva
 
 norm_dist = NormalDist(mu=height_at_average_value, sigma=standard_deviation)
-electron_content_percentage_above_ISS2 = 1 - norm_dist.cdf(404)
+electron_content_percentage_above_ISS2 = 1 - norm_dist.cdf(H)
 print("Postotak ukupnog sadržaja elektrona u ionosferi koji se nalazi iznad ISS2: {:.4f} %"
       .format(electron_content_percentage_above_ISS2 * 100))
 
